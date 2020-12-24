@@ -17,7 +17,7 @@ public class K8sClientExample {
 
             Config config = new ConfigBuilder().withMasterUrl("https://mymaster.com").build();
             KubernetesClient client = new DefaultKubernetesClient(config);
-
+            client.apps().deployments().inNamespace("egys").list();
 
         }catch (Exception ex) {
              log.error(ex.toString());
